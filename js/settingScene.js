@@ -66,7 +66,7 @@ cube.position.set(100, 200,1000);
 
    createRabbit();
 
-   createDino();
+   //createDino();
 
    createArma();
 
