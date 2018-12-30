@@ -1,0 +1,191 @@
+html{
+    width:100%;
+    height:100%;
+    -webkit-font-smoothing: antialiased;
+    background-color: black;
+}body {
+  font-family: 'Georgia';
+  background-color: #000000;
+  color: #444;
+
+  float: left;
+} p1 {
+  color: #d5d6de;
+   /*text-align: center;*/
+   display: inline-block;
+    width: 800px;
+/*    border: 3px solid #73AD21;
+*/    padding: 10px;
+font-family: 'Montserrat', sans-serif;
+ font-size: 35px;
+ letter-spacing: 3px;
+}
+h5 {
+  color: #d5d6de;
+   /*text-align: center;*/
+   display: inline-block;
+    width: 800px;
+/*    border: 3px solid #73AD21;
+*/    padding: 10px;
+font-family: 'Montserrat', sans-serif;
+ font-size: 35px;
+ letter-spacing: 3px;
+}
+
+
+p {
+  line-height: 1.8;
+  color: white;
+ 
+} head {
+	background-color: blue;
+}
+
+h2{
+  color: white;
+  text-align: center;
+  font-size: 60px;
+ font-family: 'Unica One', cursive;
+
+
+}
+
+h3{
+  /*color: #A4475F;*/
+  color: #58b99a;
+  text-align: right;
+  font-size: 60px;
+ font-family: 'Unica One', cursive;
+ padding-right: 50px;
+ padding-top: 0px;
+ padding-bottom: 0px;
+ letter-spacing: 40px;
+
+
+}
+
+h4{
+  color: black;
+  text-align: center;
+  font-size: 60px;
+ font-family: 'Unica One', cursive;
+
+
+}
+
+
+about {
+    float: left;
+    width: 100%;
+    /*background-color: #0e1215;*/
+    height: 500px;
+    background-image: linear-gradient(#0e1215 ,#181f24); /* only for demonstration, should be removed */
+    /*transform:rotate(2deg);*/
+    /*text-align: center;*/
+
+}
+
+contact {
+
+
+    width: 100%;
+    /*background-color: #0e1215;*/
+    height: 500px;
+    background-image: linear-gradient(#0e1215 ,#181f24); /* only for demonstration, should be removed */
+    /*transform:rotate(2deg);*/
+    /*text-align: center;*/
+
+
+}
+
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+  background-color: transparent;
+  width: 400px;
+  height: 250px;
+  
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 400px;
+  height: 250px;
+  
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+  background-color: #000000;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: #1d1e22;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+a:link {
+  color: white; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+ color:#feda6a;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
