@@ -68,25 +68,10 @@
       type();
     }
 
-    /* Country detection for citizenship */
-    function detectCountry() {
-      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "";
-      const usZones = [
-        "America/New_York","America/Chicago","America/Denver","America/Los_Angeles",
-        "America/Phoenix","America/Anchorage","Pacific/Honolulu"
-      ];
-      const caZones = [
-        "America/Toronto","America/Montreal","America/Vancouver","America/Winnipeg",
-        "America/Halifax","America/St_Johns","America/Edmonton"
-      ];
-      if (usZones.some(z => tz.includes(z))) return "🇺🇸 American";
-      if (caZones.some(z => tz.includes(z))) return "🇨🇦 Canadian";
-      return "🌍 Global Citizen";
-    }
+   
 
     /* Views */
     function renderAbout() {
-      const citizenship = detectCountry();
       contentElement.innerHTML = `
         <pre>
 
@@ -95,7 +80,6 @@ Namespace:    portfolio
 Labels:       role=full-stack-developer
 Status:       Running
 Location:     📍 Montreal, Canada
-Citizenship:  ${citizenship}
 
 🎓 <span class="mgmt">Education</span>:
   Bachelor of Engineering in Electrical
