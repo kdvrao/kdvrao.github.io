@@ -1,0 +1,193 @@
+    :root {
+      --bg: #000;
+      --frame: #9cdcfe;
+      --text: #9cdcfe;
+      --accent-yellow: #dcdcaa;
+      --accent-green: #6a9955;
+      --accent-teal: #4ec9b0;
+      --accent-orange: #ce9178;
+      --accent-purple: #c586c0;
+      --accent-red: #f44747;
+      --eggshell: #f0ead6; /* experiences text color in dark mode */
+    }
+
+    /* Light theme overrides (soft, less bright) */
+    body.light-theme {
+      --bg: #f4f1e9;           /* soft eggshell beige */
+      --frame: #555;           /* darker frame for contrast */
+      --text: #2c2c2c;         /* dark gray text */
+      --accent-yellow: #b58900;
+      --accent-green: #2e8b57;
+      --accent-teal: #006d6d;
+      --accent-orange: #a74d1a;
+      --accent-purple: #6a3c85;
+      --accent-red: #9b1d1d;
+      --eggshell: #333;        /* experiences text color in light mode */
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    /* Header: status + theme toggle + browser detection */
+    header {
+      background-color: var(--bg);
+      border-bottom: 1px solid var(--frame);
+      padding: 0.75rem 1rem;
+      margin: 0;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .status-bar-horizontal {
+      display: flex;
+      flex-direction: row;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .status-bar-horizontal .value {
+      color: var(--accent-yellow);
+      margin-left: 0.5rem;
+    }
+
+    .theme-toggle {
+      background: transparent;
+      color: var(--accent-green);
+      border: 1px solid var(--frame);
+      padding: 0.35rem 0.7rem;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+    .theme-toggle:hover {
+      color: var(--accent-yellow);
+      border-color: var(--accent-yellow);
+    }
+
+    /* Layout */
+    main {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1.25rem;
+      margin: 0 1rem;
+      padding: 1rem 0.5rem;
+      box-sizing: border-box;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      padding-top: 0.25rem;
+    }
+    .sidebar div {
+      color: var(--accent-orange);
+      cursor: pointer;
+      user-select: none;
+    }
+    .sidebar div:hover {
+      color: var(--accent-yellow);
+    }
+
+    .frame {
+      border: 1px solid var(--frame);
+      padding: 1rem;
+      box-sizing: border-box;
+      background-color: var(--bg);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: var(--accent-teal);
+      margin: 0 0 0.25rem 0;
+    }
+
+    .hint-inline {
+      font-size: 0.9rem;
+      color: var(--accent-green);
+      margin-bottom: 0.6rem;
+    }
+
+    /* Typing line with blinking caret */
+    h2 {
+      font-size: 1.2rem;
+      color: var(--accent-yellow);
+      margin: 0 0 0.75rem 0;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+    }
+    h2::after {
+      content: "";
+      display: inline-block;
+      width: 0.6ch;
+      height: 1em;
+      vertical-align: -0.1em;
+      background-color: var(--accent-yellow);
+      margin-left: 2px;
+      animation: blink-caret .75s step-end infinite;
+    }
+    @keyframes blink-caret {
+      from, to { background-color: transparent }
+      50% { background-color: var(--accent-yellow) }
+    }
+
+    /* Terminal-like content blocks */
+    pre {
+      font-size: 0.85rem;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 0.5rem 0.75rem;
+      white-space: pre;
+      margin: 0;
+      text-align: left;
+      border: 1px solid var(--frame);
+    }
+
+    a { color: var(--text); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Semantic color classes */
+    .lang { color: var(--accent-teal); }
+    .db { color: var(--accent-purple); }
+    .tool { color: var(--accent-orange); }
+    .ide { color: var(--accent-green); }
+    .mgmt { color: var(--accent-yellow); }
+    .human { color: var(--accent-red); }
+    .accent-green { color: var(--accent-green); }
+    .accent-yellow { color: var(--accent-yellow); }
+
+    /* Experiences section styling */
+    .experiences { color: var(--eggshell); }
+    .job-title { color: var(--accent-green); font-weight: bold; }
+    .years { color: var(--accent-yellow); }
+    .language { color: var(--accent-teal); }
+    .emoji { margin-right: 0.25rem; }
+
+    @media (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+        margin: 0 0.5rem;
+        padding: 0.75rem 0.25rem;
+        gap: 1rem;
+      }
+      .sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+      }
+      pre { font-size: 0.82rem; }
+    }
